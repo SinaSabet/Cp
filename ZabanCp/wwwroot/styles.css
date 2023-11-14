@@ -1,0 +1,131 @@
+﻿@charset "utf-8";
+input[type="file"] {
+    display: block;
+}
+
+body {
+    background: #ed563b;
+}
+
+.box map {
+    width: 100%;
+    height: 100%;
+}
+
+.box1 map {
+    object-fit: cover;
+}
+
+.forget-pwd > a {
+    color: #dc3545;
+    font-weight: 500;
+}
+
+.forget-password .panel-default {
+    padding: 31%;
+    margin-top: -27%;
+}
+
+.forget-password .panel-body {
+    padding: 15%;
+    margin-bottom: -50%;
+    background: #fff;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+<style >
+#loadingImg {
+    display: none;
+}
+
+.btnForget {
+    background: #c0392b;
+    border: none;
+}
+
+.forget-password .dropdown {
+    width: 100%;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+
+    .forget-password .dropdown button {
+        width: 100%;
+    }
+
+    .forget-password .dropdown ul {
+        width: 100%;
+    }
+
+body {
+    font-family: ‘Segoe UI’;
+    font-size: 12pt;
+}
+
+header h1 {
+    font-size: 12pt;
+    color: #fff;
+    background-color: #1BA1E2;
+    padding: 20px;
+}
+
+article {
+    width: 100%;
+    margin: auto;
+    margin-top: 100px;
+    max-height: 75px;
+}
+
+.imageThumb {
+    height: 100px;
+    margin: 40px;
+}
+
+
+
+
+
+
+
+.remove {
+    display: block;
+    background: #444;
+    border: 1px solid black;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+    .remove:hover {
+        background: white;
+        color: black;
+    }
+
+.main-section {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#app {
+    width: 100%;
+    height: 300px;
+    margin: auto;
+    padding: 10px
+    /*  margin: 200px;*/
+}
+
+.fileinput-remove,
+.fileinput-upload {
+    display: flex;
+}
+
+.box map {
+    width: 100%;
+    height: 100%;
+}
+
+.box1 map {
+    object-fit: cover;
+}

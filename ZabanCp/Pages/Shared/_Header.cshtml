@@ -1,0 +1,107 @@
+﻿<header id="header" class="header clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2">
+                <div id="logo" class="logo float-left">
+                    <a href="index.html" rel="home">
+                        <img src="/Ui/images/clients/language.png" alt="image">
+                    </a>
+                </div><!-- /.logo -->
+                <div class="btn-menu">
+                    <span></span>
+                </div><!-- //mobile menu button -->
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-9">
+                <div class="nav-wrap">
+                    <nav id="mainnav" class="mainnav float-left">
+                        <ul class="menu">
+                            <li class="home">
+                                <a href="index.html">خانه</a>
+                            </li>
+                           @* <li>
+                                <a href="listing-grid.html">آگهی</a>
+                                <ul class="submenu">
+                                    <li>
+                                        <a href="/FrooshForilist">آگهی های فروش فوری</a>
+                                    </li>
+                                    <li>
+                                        <a href="/list">همه آگهی ها</a>
+                                    </li>
+                                    <li>
+                                        <a href="/ExhibitionAccountList">لیست نمایشگاه ها</a>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="modal" href="#popup_KharidFori">درخواست جستجو خودرو</a>
+                                    </li>
+
+                                </ul><!-- /.submenu -->
+                            </li>
+                            <li>
+                                <a href="blog.html">وبلاگ</a>
+                                <ul class="submenu">
+                                    <li>
+                                        <a href="blog.html">وبلاگ</a>
+                                    </li>
+                                    <li>
+                                        <a href="blog-single.html">وبلاگ تنها</a>
+                                    </li>
+                                </ul><!-- /.submenu -->
+                            </li>
+                            <li>
+                                <a href="page-about.html">صفحات</a>
+                                <ul class="submenu">
+                                    <li>
+                                        <a href="/About-us">درباره ما</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Contact-Us">خدمات</a>
+                                    </li>
+                                    <li>
+                                        <a href="page-user.html">کاربر</a>
+                                    </li>
+                                    <li>
+                                        <a href="page-profile.html">پروفایل کاربر</a>
+                                    </li>
+                                    <li>
+                                        <a href="page-addlisting.html">افزودن آگهی</a>
+                                    </li>
+                                    <li>
+                                        <a href="page-pricing.html">تعرفه ها</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Contact-Us">تماس با ما</a>
+                                    </li>
+                                </ul><!-- /.submenu -->
+                            </li>
+                            <li>
+                                <a href="RegisterAccount"><i class="fa fa-user"></i>ثبت نمایشگاه</a>
+                            </li>*@
+
+                              <li>
+                                <a data-toggle="modal" id="modalkh" href="#popup_login"><i class="fa fa-user-plus"></i> ثبت نام</a>
+                            </li>
+                           @* @if (User.Identity.IsAuthenticated)
+                            {
+
+                                <li>
+                                    <a href="/UserAccount"><i class="fa fa-user-plus"></i>حساب کاربری</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <a data-toggle="modal" id="modalkh" href="#popup_login"><i class="fa fa-user-plus"></i> ورود</a>
+                                </li>
+                            }*@
+
+                        </ul><!-- /.menu -->
+                    </nav><!-- /.mainnav -->
+
+               @*     <div class="button-addlist float-right">
+                        <button type="button" class="flat-button" onclick="location.href='Pricing'">افزودن آگهی</button>
+                    </div>*@
+                </div><!-- /.nav-wrap -->
+            </div><!-- /.col-lg-8 -->
+        </div><!-- /.row -->
+    </div>
+</header><!-- /.header -->

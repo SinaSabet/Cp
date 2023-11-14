@@ -1,0 +1,62 @@
+﻿
+<div class="modal fade flat-popupform" id="popup_login">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body text-center clearfix">
+
+                <div class="form-login form-listing">
+                    <h3 class="title-formlogin">ثبت نام</h3>
+                    <span class="input-login icon-form"><input type="number" id="phonenumber"  placeholder="شماره تلفن همراه*" required="required"><i class="fa fa-user"></i></span>
+
+                    <span class="wrap-button">
+                        <input type="button" id="login-button" class=" login-btn effect-button" value="ادامه" title="log in">
+                    </span>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script>
+    $("#login-button").click(function () {
+         var phone = $("#phonenumber").val();
+
+
+    }
+
+</script>
+<script>
+    $(function () {
+        $("#login-button").click(function () {
+           
+
+            if ($("#phonenumber").val != null) {
+
+                $.ajax({
+
+                    type: "POST",
+                    url: "/Auth/CreateNumber",
+                    data: { "phonenumber": $("#phonenumber").val() },
+                    success: function (response) {
+                        alert(response);
+
+                        $('#popup_register').modal('show');
+                        $('#popup_login').modal('hide');
+                    },
+                    failure: function (response) {
+                        alert(response);
+                    },
+                    error: function (response) {
+                        alert(response);
+                    }
+                });
+            }
+
+        });
+    });
+</script>

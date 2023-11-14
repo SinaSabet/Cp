@@ -1,0 +1,53 @@
+﻿
+@{
+    Layout = null;
+    string phone = User.Identity.Name;
+    
+}
+
+<div class="modal fade flat-popupform" id="popup_register">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body text-center clearfix">
+                <form class="form-login form-listing" action="#" method="post">
+                    <h3 class="title-formlogin">کد ورود</h3>
+                    <span class="input-login icon-form"><input type="text" id="verifactionCode" placeholder="کد ورود*" name="name" required="required"><i class="fa fa-user"></i></span>
+                    <input type="hidden" id="phone" placeholder="کد ورود*" name="name" required="required" value="@phone">
+                        
+                    <div class="wrap-button signup">
+                        <input type="button" id="logup-button" class=" login-btn effect-button" value="ورود" title="log in">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<script>
+    $(function () {
+        $("#logup-button").click(function () {
+            if ($("#phonenumber").val != null) {
+                $.ajax({
+                    type: "POST",
+                    url: "/Login",
+                    data: { "verifactionCode": $("#verifactionCode").val(), "Mobile": $("#phone").val() },
+                    success: function (response) {
+                        alert(response);
+                        $('#popup_register').modal('hide');
+                    },
+                    failure: function (response) {
+                        alert(response);
+                    },
+                    error: function (response) {
+                        alert(response);
+                    }
+                });
+            }
+
+        });
+    });
+</script>
