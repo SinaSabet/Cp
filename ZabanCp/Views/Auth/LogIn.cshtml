@@ -1,0 +1,100 @@
+﻿
+@{
+}
+
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+<head>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+
+</head>
+
+
+<div class="container vh-100 d-flex justify-content-center align-items-center">
+    <div class="card py-4 px-4">
+        <div class="text-center mt-3"> <span class="info-text">لطفاً شمارهٔ‌ موبایل خود را وارد کنید. کد تأیید به این شماره پیامک خواهد شد.</span> </div>
+        <form asp-action="GetPhoneNumber">
+            <div class="position-relative mt-3 form-input">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <input asp-for="PhoneNumber" type="tel" class="form-control" placeholder="0912******" maxlength="11" required="لطفا شماره تلفن طا وارد کنید."> <span asp-validation-for="PhoneNumber" class="text-danger"></span> <i class='bx bxs-phone'></i>
+            </div>
+
+
+            @section Scripts {
+                @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+            }
+
+            <div class=" mt-5 d-flex justify-content-between align-items-center"> <span>دریافت کد </span> <button class="go-button" type="submit"><i class='bx bxs-right-arrow-alt'></i></button> </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+<style>
+    body {
+        background-color: #ed563b
+    }
+
+    .card {
+        width: 350px;
+        padding: 10px;
+        border: none;
+        border-radius: 20px
+    }
+
+    .form-input input {
+        height: 45px;
+        padding-right: 35px;
+        border: 2px solid #eee;
+        transition: all 0.5s
+    }
+
+        .form-input input:focus {
+            box-shadow: none;
+            border: 2px solid #000
+        }
+
+    .info-text {
+        font-size: 14px
+    }
+
+    .form-input i {
+        position: absolute;
+        top: 14px;
+        right: 10px
+    }
+
+    .go-button {
+        border: none;
+        height: 50px;
+        width: 50px;
+        font-size: 29px;
+        color: #ed563b;
+        background-color: white;
+        border-radius: 50%;
+        transition: all 0.5s
+    }
+
+        .go-button:hover {
+            background-color: black
+        }
+</style>
