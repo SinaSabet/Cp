@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BussinesAccessLayer.Dto;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ZabanCp.Controllers
 {
@@ -10,5 +11,16 @@ namespace ZabanCp.Controllers
         {
             return View();
         }
+
+        [Route("CourseDetail")]
+        public IActionResult CourseDetail(int id)
+        {
+
+            return View();
+
+
+
+        }
+
     }
 }
