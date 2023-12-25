@@ -1,0 +1,96 @@
+﻿@model BussinesAccessLayer.Dto.LogInAndRegisterDto.LoginAdmin
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="fa-Iran">
+
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <title>ورود به پنل</title>
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/styles.css">
+
+
+</head>
+
+
+
+
+<!------ Include the above in your HEAD tag ---------->
+<body>
+    <div class="container forget-password">
+        <div class="row">
+            <div class="col-md-12 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="text-center">
+                            <div class="text-center"><p dir="rtl" class="logo" style="font-family:courier,arial,helvetica;">زبانکده</p><em style="font-style:italic;color:aqua">شکوه</em>  </div>
+                            <h2 class="text-center">ورود به پنل ادمین</h2>
+                            <form dir="rtl" id="register-form" role="form" autocomplete="off" class="form" method="post" style="padding:10px" asp-action="Login">
+
+
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
+                                        <input asp-for="PhoneNumber" type="tel" class="form-control" placeholder="شماره تلفن همراه" maxlength="11" min=">11" required> <span asp-validation-for="PhoneNumber" class="text-danger"></span> <i></i>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="input-group">
+
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
+
+                                        <input asp-for="Password" class="form-control input-lg" placeholder="رمز عبور" style="height:100px" maxlength="100" required> <span asp-validation-for="Password" class="text-danger"></span> <i></i>
+                                    </div>
+                                </div>
+
+
+
+
+
+                                <div class="form-group">
+                                    <input name="btnForget" class="btn btn-lg btn-primary btn-block btnForget" value="ادامه" type="submit">
+                                </div>
+
+
+                            </form>
+
+                            @section Scripts {
+                                @{
+                                    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+                                }
+
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('select').selectize({
+                sortField: 'text'
+            });
+        });
+    </script>
+  
+</body>
+
+</html>

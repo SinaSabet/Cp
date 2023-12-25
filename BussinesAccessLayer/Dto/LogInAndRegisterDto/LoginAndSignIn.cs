@@ -22,4 +22,9 @@ namespace BussinesAccessLayer.Dto.LogInAndRegisterDto
 
         public string Code { get; set; }
     }
+    public class LoginAdmin
+    {
+        public string PhoneNumber { get; set; }
+        public string Password { get; set; }
+    }
 }
