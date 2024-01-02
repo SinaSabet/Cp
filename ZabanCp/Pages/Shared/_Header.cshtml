@@ -16,10 +16,16 @@
                     <nav id="mainnav" class="mainnav float-left">
                         <ul class="menu">
                             <li class="home">
-                                <a href="index.html">خانه</a>
+                                <a href="/home">خانه</a>
                             </li>
                               <li class="home">
                                 <a href="/CourseList">لیست کلاس ها</a>
+                            </li>
+                            <li class="home">
+                                <a href="/About-us">درباره ما</a>
+                            </li>
+                            <li class="home">
+                                <a href="/Contact-Us">تماس با ما</a>
                             </li>
                            @* <li>
                                 <a href="listing-grid.html">آگهی</a>
@@ -80,9 +86,26 @@
                                 <a href="RegisterAccount"><i class="fa fa-user"></i>ثبت نمایشگاه</a>
                             </li>*@
 
-                              <li>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+
+
+                                <li>
+                                    <a href="/UserAccount"><i class="fa fa-user-plus"></i>خروج از حساب کاربری</a>
+                                </li>
+                            }
+                            else
+                            
+                            {
+                                <li>
+                                    <a data-toggle="modal" id="modalkh" href="#popup_login"><i class="fa fa-user-plus"></i> ورود</a>
+                                </li>
+                            }
+
+
+                           @*   <li>
                                 <a data-toggle="modal" id="modalkh" href="#popup_login"><i class="fa fa-user-plus"></i> ثبت نام</a>
-                            </li>
+                            </li>*@
                            @* @if (User.Identity.IsAuthenticated)
                             {
 

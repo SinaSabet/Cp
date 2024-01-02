@@ -1,4 +1,7 @@
+using BussinesAccessLayer.Interface.ISiteService;
+using BussinesAccessLayer.SiteService;
 using DataAccessLayer.Context;
+using DataAccessLayer.Repositoreis.UserRepository;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,10 +9,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<DataBaseContext>(options => options.UseSqlServer(connectionString: builder.Configuration.GetConnectionString("DefaultConnection")));
-
+builder.Services.AddScoped<IAuthService,AuthService>();
+builder.Services.AddScoped<IUserRepo,UserRepo>();
+builder.Services.AddScoped<Random, Random>();
 builder.Services.AddRazorPages();
 builder.Services.AddMvc();
 builder.Services.AddControllersWithViews();
+builder.Services.AddControllers(options => options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true);
 
 builder.Services.AddCors(options =>
 {

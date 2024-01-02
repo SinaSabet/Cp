@@ -22,8 +22,9 @@ namespace ZabanCp.Controllers
         }
 
         [HttpPost]
-        public JsonResult CreateNumber(string phonenumber)
+        public  async Task<JsonResult> SignUp(string phonenumber)
         {
+            phonenumber = "09371374752";
             string message;
             LoginAndSignIn loginAndSign = new LoginAndSignIn()
             {
@@ -50,11 +51,13 @@ namespace ZabanCp.Controllers
                 var principal = new ClaimsPrincipal(identity);
                 var properties = new AuthenticationProperties()
                 {
-                    IsPersistent = true
+                    IsPersistent = true,
+                    AllowRefresh= true,
                 };
 
+              await HttpContext.SignInAsync(principal, properties);
+                User.AddIdentity(identity);
 
-                HttpContext.SignInAsync(principal, properties);
                 ViewBag.Message = message;
                 return Json(message);
             }

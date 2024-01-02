@@ -9,7 +9,7 @@
 
                 <div class="form-login form-listing">
                     <h3 class="title-formlogin">ورود</h3>
-                    <span class="input-login icon-form"><input type="number" id="phonenumber"  placeholder="شماره تلفن همراه*" required="required"><i class="fa fa-user"></i></span>
+                    <span class="input-login icon-form"><input type="number" id="phonenumber" placeholder="شماره تلفن همراه*" required="required"><i class="fa fa-user"></i></span>
 
                     <span class="wrap-button">
                         <input type="button" id="login-button" class=" login-btn effect-button" value="ادامه" title="log in">
@@ -22,39 +22,65 @@
     </div>
 </div>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
 <script>
     $("#login-button").click(function () {
-         var phone = $("#phonenumber").val();
-
+        var phone = $("#phonenumber").val();
+        console.log(phone);
 
     }
 
 </script>
 <script>
-    $(function () {
+            $(function () {
         $("#login-button").click(function () {
-           
 
-            if ($("#phonenumber").val != null) {
+
+            if ($("#phonenumber").val() != null) {
+                console.log("Start");
+
+                //$.ajax({
+
+                //    type: "POST",
+                //    url: "/Auth/CreateNumber",
+                //    data: { "phonenumber": $("#phonenumber").val() },
+                //    success: function (response) {
+                //        alert(response);
+
+                //        $('#popup_register').modal('show');
+                //        $('#popup_login').modal('hide');
+                //    },
+                //    failure: function (response) {
+                //        alert(response);
+                //    },
+                //    error: function (response) {
+                //        alert(response);
+                //    }
+                //});
+
 
                 $.ajax({
-
                     type: "POST",
-                    url: "/Auth/CreateNumber",
+                    url: "/Auth/SignUp",
                     data: { "phonenumber": $("#phonenumber").val() },
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: 'json',
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert("Request: " + XMLHttpRequest.toString() + "\n\nStatus: " + textStatus + "\n\nError: " + errorThrown);
+                    },
                     success: function (response) {
                         alert(response);
 
-                        $('#popup_register').modal('show');
+                        $('#popup_register').modal('hide');
                         $('#popup_login').modal('hide');
                     },
                     failure: function (response) {
                         alert(response);
                     },
-                    error: function (response) {
-                        alert(response);
-                    }
                 });
+
+
+
             }
 
         });
