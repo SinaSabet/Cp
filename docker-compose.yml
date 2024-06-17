@@ -1,0 +1,29 @@
+version: "3"
+services:
+  zabanservice:
+    build: .
+    ports:
+      - "5000:80"
+    #    - 44348:44348
+    environment:
+      - HOME=C:/Users/Dear User
+  #  volumes:
+  #   - ${HOME}/.microsoft/usersecrets/:/root/.microsoft/usersecrets
+  #  - ${HOME}/.aspnet/https:/root/.aspnet/https
+
+  prometheus:
+    image: prom/prometheus:latest
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    environment:
+      - HOME=C:/Users/Dear User
+    depends_on:
+      - zabanservice
+  grafana:
+    image: grafana/grafana-enterprise
+    ports:
+      - "3001:3000"
+    depends_on:
+      - prometheus
